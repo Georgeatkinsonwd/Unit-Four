@@ -65,19 +65,17 @@ _Make a list of examples of how the class will behave in different situations._
 ``` python
 # EXAMPLE
 
-Given an empty birthday book self.friends returns an empty dictionary {}
+- Given an empty birthday book self.friends returns an empty dictionary {}
 
-Given the addBirthday method, adds a name and a birthday and last sent as None to self.friends. 
+- Given the addBirthday method, adds a name and a birthday and last sent as None to self.friends. 
 
-addBirthday method raises an error if name is not a string, birthday is not the correct format. 
+- addBirthday method raises an error if name is not a string, birthday is not the correct format. 
 
-Given editBirthday, changes birthday date to new date. 
+ -Given editBirthday, changes birthday date to new date. 
 
-Given editBirthday, returns an error if name is not found or not a string and if new date is not correct format. 
+- Given editBirthday, returns an error if name is not found or not a string and if new date is not correct format. 
 
-Given editName , changes name to the new name 
-
-editName returns error if name is not found and new name is not a string. 
+- editName returns error if name is not found and new name is not a string. 
 
 given upcomingBirthdays returns list of all birthdays coming up this month. 
 

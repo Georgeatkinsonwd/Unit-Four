@@ -101,3 +101,38 @@ def test_edit_name_changes_to_new_name():
     
     assert birthday_book.friends.get("Adam") == None
 
+"""
+given upcomingBirthdays
+returns list of all birthdays coming up this month. 
+"""
+def test_upcoming_birthdays_lists_birthdays_in_next_month():
+    birthday_book = BirthdayBook()
+    birthday_book.add("Adam", "18-04-2010")
+    birthday_book.add("Anna", "10-05-1999")
+    birthday_book.add("Aidan", "15-06-2010")
+    
+    assert birthday_book.upcoming_birthdays() == {"Adam": 
+                                            {"Birthdate": "18-04-2010", 
+                                             "Last Sent": None
+                                             },
+                                             "Anna": 
+                                            {"Birthdate": "10-05-1999", 
+                                             "Last Sent": None
+                                             }}
+    
+def test_ages_for_upcoming():
+    birthday_book = BirthdayBook()
+    birthday_book.add("Adam", "18-04-2010")
+    birthday_book.add("Anna", "10-05-1999")
+    birthday_book.add("Aidan", "15-06-2010")
+
+    assert birthday_book.ages_upcoming_birthdays() == [("Adam", 15), ("Anna", 26)]
+
+def test_ages_for_check_if_sent():
+    birthday_book = BirthdayBook()
+    birthday_book.add("Adam", "16-04-2010")
+    birthday_book.add("Anna", "10-05-1999")
+    birthday_book.add("Aidan", "15-06-2010")
+    birthday_book.mark_sent("Adam")
+
+    assert birthday_book.check_if_sent("Adam") == True
